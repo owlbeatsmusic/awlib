@@ -57,7 +57,7 @@ void *event_thread(void *arg) {
 	}
 }
 
-int awlib_input_detect_set_device() {
+int awlib_input_detect_set_keybd_device() {
 
 	int devices = 0;
 
@@ -91,13 +91,13 @@ int awlib_input_detect_set_device() {
 	}
 	
 	char input_char;
-	printf("Enter a charcter: ");
+	printf("[ Input Detection ]: press ENTER / RETURN\n");
 	fflush(stdout);
 	scanf("%c", &input_char);
 	fflush(stdout);
 	
 	sprintf(event_device_file_path, "/dev/input/event%d", current_event_device_number);
-	printf("keyboard input device detected: \"%s\"\n", event_device_file_path);
+	//printf("keyboard input device detected: \"%s\"\n", event_device_file_path);
 
 	for (int i = 0; i < devices; i++) {
 		pthread_cancel(threads[i]);
@@ -107,12 +107,12 @@ int awlib_input_detect_set_device() {
 	
 }
 
-int awlib_input_set_device(char *path_to_device) {
+int awlib_input_set_keybd_device(char *path_to_device) {
 	strcpy(event_device_file_path, path_to_device);
 	return 0;
 }
 
-int awlib_input_get_device(char *destination) {
+int awlib_input_get_keybd_device(char *destination) {
 	strcpy(destination, event_device_file_path);
 	return 0;
 }
