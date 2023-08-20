@@ -18,7 +18,7 @@ How to use:
  	```
  	This avoids any prompts if you have the current device in for example a config file.
 	
- 	> **The event device can change on boot**: This usually dosnt happen with built-in keyboards!
+ 	> **⚠️ The event device can change on boot**: <br/> This usually dosnt happen with built-in keyboards!
 <br/><br/>
 
 3. Create a function where the keyboard input gets sent:
