@@ -9,6 +9,15 @@ int keyboard_input(int key_code) {
 }
 
 int main() {
+	
+	awlib_input_detect_set_keybd_device();
+	
+	//awlib_input_set_keybd_device("hejsan/badklsjdkljskladj");
+	
+	char event_device[64];
+	awlib_input_get_keybd_device(event_device);
+	printf("get=%s\n", event_device);
+
 	awlib_input_start(keyboard_input);
 	sleep(3);
 }

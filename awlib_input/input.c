@@ -57,7 +57,7 @@ void *event_thread(void *arg) {
 	}
 }
 
-int detect_input_device_internal() {
+int awlib_input_detect_set_device() {
 
 	int devices = 0;
 
@@ -107,6 +107,15 @@ int detect_input_device_internal() {
 	
 }
 
+int awlib_input_set_device(char *path_to_device) {
+	strcpy(event_device_file_path, path_to_device);
+	return 0;
+}
+
+int awlib_input_get_device(char *destination) {
+	strcpy(destination, event_device_file_path);
+	return 0;
+}
 
 
 
@@ -143,7 +152,6 @@ void *keyboard_input_thread(void *arg) {
 
 // main
 int awlib_input_start(KeybdInputFunction keyboard_destination_function) {
-	detect_input_device_internal();
 
 	keyboard_function = keyboard_destination_function;
 	
