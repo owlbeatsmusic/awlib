@@ -38,7 +38,10 @@ int awlib_config_parse_internal(char *file_content, int file_length, KeyValueSet
 	}
 }
 
-//void grafik_config_add_string(char *file_path, char *key, char *value) {}
+int awlib_config_add_string(char *file_path, char *key, char *value) {
+	
+	return 0;
+}
 
 int awlib_config_create(char* file_path) {
 	FILE *file = fopen(file_path, "w");

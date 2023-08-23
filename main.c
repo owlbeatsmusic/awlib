@@ -1,4 +1,6 @@
+#include "awlib_config/config.h"
 #include "awlib_input/input.h"
+#include "awlib_log/log.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -9,7 +11,12 @@ int my_keyboard_function(int key_code) {
 }
 
 int main() {
-	
+
+	awlib_log_create("log.txt");
+	awlib_log_print_file_date("log.txt", "HALLÅ, detta är viktigt");
+
+/* input example
+
 	awlib_input_detect_set_keybd_device();
 	
 	//awlib_input_set_keybd_device("custom/file/path");
@@ -20,6 +27,7 @@ int main() {
 
 	awlib_input_start(my_keyboard_function);
 	sleep(1);
+*/
 
 	return 0;
 }
