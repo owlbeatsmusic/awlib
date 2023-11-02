@@ -2,12 +2,17 @@
 #include <stdio.h>
 #include <time.h>
 
-int awlib_log_create(char *file_path) {
-	FILE *log_file = fopen(file_path, "w");
+int awlib_log_checkfile_internal(FILE *log_file) {
 	if (log_file == NULL) {
-		perror("error: failed to create(/open) log file");
+		perror("error: failed to open logfile");
 		return -1;
 	}
+	return 0;
+}
+
+int awlib_log_create(char *file_path) {
+	FILE *log_file = fopen(file_path, "w");
+	awlib_log_checkfile_internal(log_file);
 	fclose(log_file);
 
 	return 0;
@@ -15,25 +20,21 @@ int awlib_log_create(char *file_path) {
 
 int awlib_log_print(char *file_path, char *input) {
 	FILE *log_file = fopen(file_path, "a");
-	if (log_file == NULL) {
-		perror("error: failed to open logfile");
-		return -1;
-	}
+	awlib_log_checkfile_internal(log_file);
 	
-	if (fputs(final_string, log_file) == EOF || fputs("\n", log_file)) {
+	if (fputs(input, log_file) == EOF || fputs("\n", log_file) == EOF) {
 		perror("error while writing to log file");
 		fclose(log_file);
 		return -1;
 	}
 	fclose(log_file);
+	return 0;
 }
 
-int awlib_log_print_date(char *file_path, char *input) {
+//                  time
+int awlib_log_print_t(char *file_path, char *input) {
 	FILE *log_file = fopen(file_path, "a");
-	if (log_file == NULL) {
-		perror("error: failed to open logfile");
-		return -1;
-	}
+	awlib_log_checkfile_internal(log_file);
 
 	// time string
 	time_t current_time;
@@ -45,7 +46,7 @@ int awlib_log_print_date(char *file_path, char *input) {
 	strftime(formatted_time, sizeof(formatted_time), "[%Y-%m-%d %H:%M:%S]: ", local_time);
 	
 	if (fputs(formatted_time, log_file) == EOF) {
-		perror("error while writing to log file");
+		perror("[t] error while writing to log file");
 		fclose(log_file);
 		return -1;
 	}
@@ -56,15 +57,17 @@ int awlib_log_print_date(char *file_path, char *input) {
 	return 0;
 }
 
-int awlib_log_print_date(char *file_path, char *input) {
+//                  file
+int awlib_log_print_f(char *file_path, char *input, char *this_file) {
 	FILE *log_file = fopen(file_path, "a");
-	if (log_file == NULL) {
-		perror("error: failed to open logfile");
-		return -1;
-	}
-	
-	if (fputs(__FILE__, log_file) == EOF) {
-		perror("error while writing to log file");
+	awlib_log_checkfile_internal(log_file);
+
+	char dest_buffer[50] = "[";
+	strcat(dest_buffer, this_file);
+	strcat(dest_buffer, "]: ");
+
+	if (fputs(dest_buffer, log_file) == EOF) {
+		perror("([f] error while writing to log file");
 		fclose(log_file);
 		return -1;
 	}
@@ -72,6 +75,10 @@ int awlib_log_print_date(char *file_path, char *input) {
 	fclose(log_file);
 	awlib_log_print(file_path, input);
 	
+	return 0;
+}
+//                  file & time
+int awlib_log_print_ft(char *file_path, char *input, char *this_file) {
 	return 0;
 }
 

@@ -13,7 +13,8 @@ int my_keyboard_function(int key_code) {
 int main() {
 
 	awlib_log_create("log.txt");
-	awlib_log_print_file_date("log.txt", "HALLÅ, detta är viktigt");
+	// awlib_log_print_f("log.txt", "HALLÅ, detta är viktigt", __FILE__);
+	awlib_log_print_t("log.txt", "HALLÅ, detta är viktigt");
 
 /* input example
 
