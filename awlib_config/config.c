@@ -36,6 +36,7 @@ int awlib_config_parse_internal(char *file_content, int file_length, KeyValueSet
 		temp_buf[temp_buf_index] = file_content[i];
 		temp_buf_index++;
 	}
+	return 0;
 }
 
 int awlib_config_add_string(char *file_path, char *key, char *value) {
@@ -50,6 +51,7 @@ int awlib_config_create(char* file_path) {
 		return -1;
 	}
 	fclose(file);
+	return 0;
 }
 
 int awlib_config_get_string(char *file_path, char *key, char *destination_buffer, int buffer_size) {
