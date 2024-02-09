@@ -17,6 +17,7 @@ How to use:
    ```
    [2024-02-09 12:00:37]: message
    ```
+   <br/><br/>
  - **File**
    ```c
    awlib_log_print_f("log_example.txt", "message");
@@ -25,8 +26,10 @@ How to use:
    ```
    [main.c]: message 
    ```
+   <br/><br/>
  - **Time, Date & File**
 
+<br/><br/>
 ## Input Library
 How to use:
 1. Add both files from *awlib_input/* or the directory.
