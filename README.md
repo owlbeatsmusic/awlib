@@ -9,7 +9,7 @@ How to use:
    awlib_log_create("log_example.txt");
    ```
 2. Then to log to the file, depending on which information you wan't included use:
- - **Time**
+ - **Time & Date**
    ```c
    awlib_log_print_t("log_example.txt", "message");
    ```
@@ -17,8 +17,15 @@ How to use:
    ```
    [2024-02-09 12:00:37]: message
    ```
- - **Date**
- - **Time & Date**
+ - **File**
+   ```c
+   awlib_log_print_f("log_example.txt", "message");
+   ```
+   this will output to the *./log_example.txt*:
+   ```
+   [main.c]: message 
+   ```
+ - **Time, Date & File**
 
 ## Input Library
 How to use:
