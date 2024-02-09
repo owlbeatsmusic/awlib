@@ -1,6 +1,25 @@
 # awlib
 After working on "grafik" I decided to create this instead. So some files will be originated from "grafik".
 
+## Logging Library
+(It's super basic)
+How to use:
+1. Create the log file beforehand or if you wan't to clear it(/create it) within code, use:
+   ```c
+   awlib_log_create("log_example.txt");
+   ```
+2. Then to log to the file, depending on which information you wan't included use:
+ - **Time**
+   ```c
+   awlib_log_print_t("log_example.txt", "message");
+   ```
+   this will output to the *./log_example.txt*:
+   ```
+   [2024-02-09 12:00:37]: message
+   ```
+ - **Date**
+ - **Time & Date**
+
 ## Input Library
 How to use:
 1. Add both files from *awlib_input/* or the directory.
