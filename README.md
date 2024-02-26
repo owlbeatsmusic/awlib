@@ -1,5 +1,6 @@
 # awlib
-After working on "grafik" I decided to create this instead. So some files will be originated from "grafik".
+After working on "grafik" I decided to create this instead. So some files will be originated from "grafik". 
+These are meant to be lightweight and super simple basic libraries that I've needed in lots of small projetcs. These all work stand-alone so if you need just for example the logging library, then just download that folder with the file and header and you are good to go. Don't expect anything more than the bare minimum for anyone though.
 
 ## Logging Library
 (It's super basic)
@@ -17,7 +18,7 @@ How to use:
    ```
    [2024-02-09 12:00:37]: message
    ```
-   <br/><br/>
+   <br/>
  - **File**
    ```c
    awlib_log_print_f("log_example.txt", "message");
@@ -26,10 +27,11 @@ How to use:
    ```
    [main.c]: message 
    ```
-   <br/><br/>
+   <br/>
  - **Time, Date & File**
+   to be added...
 
-These will not add line break so to append strings and numbers to the log message use:
+These will not add a line break so to append strings and numbers to the log message use:
    ```c
    awlib_log_print_string("log_example.txt", "message");
    ```
