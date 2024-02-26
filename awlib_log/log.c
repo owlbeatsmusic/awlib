@@ -18,11 +18,11 @@ int awlib_log_create(char *file_path) {
 	return 0;
 }
 
-int awlib_log_print(char *file_path, char *input) {
+int awlib_log_print_string(char *file_path, char *input) {
 	FILE *log_file = fopen(file_path, "a");
 	awlib_log_checkfile_internal(log_file);
 	
-	if (fputs(input, log_file) == EOF || fputs("\n", log_file) == EOF) {
+	if (fputs(input, log_file) == EOF) {
 		perror("error while writing to log file");
 		fclose(log_file);
 		return -1;
@@ -52,7 +52,7 @@ int awlib_log_print_t(char *file_path, char *input) {
 	}
 
 	fclose(log_file);
-	awlib_log_print(file_path, input);
+	awlib_log_print_string(file_path, input);
 	
 	return 0;
 }
@@ -73,7 +73,7 @@ int awlib_log_print_f(char *file_path, char *input, char *this_file) {
 	}
 
 	fclose(log_file);
-	awlib_log_print(file_path, input);
+	awlib_log_print_string(file_path, input);
 	
 	return 0;
 }

@@ -12,21 +12,26 @@ int my_keyboard_function(int key_code) {
 
 int main() {
 
-	awlib_config_create("config.ini");
-	awlib_config_add_string("config.ini", "test_key_1", "värde1");
+	//awlib_config_create("config.ini");
+	//awlib_config_add_string("config.ini", "test_key_1", "värde1");
+
+
 
 	awlib_log_create("log.txt");
 	// awlib_log_print_f("log.txt", "HALLÅ, detta är viktigt", __FILE__);
+
 	awlib_log_print_t("log.txt", "7 2189379872 9 HALLÅ, detta är viktigt 2");
 	
-	char dest_buf[100];
-	awlib_config_get_string("config.ini", "test_key_1", dest_buf, 100);
-	
-	printf("dest_buf=%s\n", dest_buf);
-	
-	awlib_config_set_string("config.ini", "test_key_1", "byte1");
+	awlib_log_print_string("log.txt", "vadå\n");
 
-	printf("dest_buf=%s\n", dest_buf);
+	//char dest_buf[100];
+	//awlib_config_get_string("config.ini", "test_key_1", dest_buf, 100);
+	
+	//printf("dest_buf=%s\n", dest_buf);
+	
+	//awlib_config_set_string("config.ini", "test_key_1", "byte1");
+
+	//printf("dest_buf=%s\n", dest_buf);
 
 	/* input example
 
