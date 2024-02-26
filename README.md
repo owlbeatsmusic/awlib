@@ -1,5 +1,5 @@
 # awlib
-After working on "grafik" I decided to create this instead. So some files will be originated from "grafik". 
+After working on "grafik" I decided to create this instead. So some files will be originated from "grafik".<br/> 
 These are meant to be lightweight and super simple basic libraries that I've needed in lots of small projetcs. These all work stand-alone so if you need just for example the logging library, then just download that folder with the file and header and you are good to go. Don't expect anything more than the bare minimum for anyone though.
 
 ## Logging Library
