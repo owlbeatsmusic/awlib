@@ -8,7 +8,7 @@ How to use:
    ```c
    awlib_log_create("log_example.txt");
    ```
-2. Then to log to the file, depending on which information you wan't included use:
+2. Then to log to the file, depending on which information you want included use:
  - **Time & Date**
    ```c
    awlib_log_print_t("log_example.txt", "message");
@@ -28,6 +28,17 @@ How to use:
    ```
    <br/><br/>
  - **Time, Date & File**
+
+These will not add line break so to append strings and numbers to the log message use:
+   ```c
+   awlib_log_print_string("log_example.txt", "message");
+   ```
+   ```c
+   awlib_log_print_int("log_example.txt", 123);
+   ```
+   ```c
+   awlib_log_print_float("log_example.txt", 3.14, 2); // 2 is the ammount of decimals
+   ```
 
 <br/><br/>
 ## Input Library

@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <time.h>
+#include <math.h>
 
 int awlib_log_checkfile_internal(FILE *log_file) {
 	if (log_file == NULL) {
@@ -30,6 +31,40 @@ int awlib_log_print_string(char *file_path, char *input) {
 	fclose(log_file);
 	return 0;
 }
+
+int awlib_log_print_int(char *file_path, int input) {
+	FILE *log_file = fopen(file_path, "a");
+	awlib_log_checkfile_internal(log_file);
+	
+	char input_buf[(int)((ceil(log10(input))+1))];
+	sprintf(input_buf, "%d", input);
+
+	if (fputs(input_buf, log_file) == EOF) {
+		perror("error while writing to log file");
+		fclose(log_file);
+		return -1;
+	}
+	fclose(log_file);
+	return 0;
+}
+
+int awlib_log_print_float(char *file_path, float input, int decimals) {
+	FILE *log_file = fopen(file_path, "a");
+	awlib_log_checkfile_internal(log_file);
+
+	char input_buf[(int)(ceil(log10((input))+1)) + decimals];
+	sprintf(input_buf, "%f", input);
+	//gcvt(input, sizeof(input_buf)/sizeof(char), input_buf);
+
+	if (fputs(input_buf, log_file) == EOF) {
+		perror("error while writing to log file");
+		fclose(log_file);
+		return -1;
+	}
+	fclose(log_file);
+	return 0;
+}
+
 
 //                  time
 int awlib_log_print_t(char *file_path, char *input) {

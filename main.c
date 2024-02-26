@@ -20,9 +20,13 @@ int main() {
 	awlib_log_create("log.txt");
 	// awlib_log_print_f("log.txt", "HALLÅ, detta är viktigt", __FILE__);
 
-	awlib_log_print_t("log.txt", "7 2189379872 9 HALLÅ, detta är viktigt 2");
-	
-	awlib_log_print_string("log.txt", "vadå\n");
+	awlib_log_print_t("log.txt", "blablabla");
+
+	awlib_log_print_int("log.txt", 67);
+
+	awlib_log_print_string("log.txt", " och ");
+
+	awlib_log_print_float("log.txt", 52.2456, 0);
 
 	//char dest_buf[100];
 	//awlib_config_get_string("config.ini", "test_key_1", dest_buf, 100);
