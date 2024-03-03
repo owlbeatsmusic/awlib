@@ -1,6 +1,12 @@
 # awlib
-After working on "grafik" I decided to create this instead. So some files will be originated from "grafik".<br/> 
-These are meant to be lightweight and super simple basic libraries that I've needed in lots of small projetcs. These all work stand-alone so if you need just for example the logging library, then just download that folder with the file and header and you are good to go. Don't expect anything more than the bare minimum for anyone though.
+These are meant to be lightweight and super simple basic libraries that I've needed in lots of small projetcs. These all work stand-alone so if you need just for example the logging library, then just download that folder with the file and header and you are good to go. Don't expect anything more than the bare minimum for any of them though.
+
+**status**
+ - 🟢 [Log](#logging-library): working
+ - 🟢 [Input](#input-library): working	
+ - 🔴 Config: not working
+
+---
 
 ## Logging Library
 (It's super basic)
@@ -30,6 +36,7 @@ How to use:
    <br/>
  - **Time, Date & File**
    to be added...
+<br/>
 
 These will not add a line break so to append strings and numbers to the log message use:
    ```c
@@ -44,6 +51,8 @@ These will not add a line break so to append strings and numbers to the log mess
 
 <br/><br/>
 ## Input Library
+This library only works on linux.
+
 How to use:
 1. Add both files from *awlib_input/* or the directory.
 <br/><br/>
