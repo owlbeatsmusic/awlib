@@ -5,6 +5,7 @@ These are meant to be lightweight and super simple basic libraries that I've nee
  - 🟢 [Log](#logging-library): working
  - 🟢 [Input](#input-library): working	
  - 🔴 Config: not working
+ - 🔴 Str: not working
 
 ---
 

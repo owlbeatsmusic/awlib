@@ -1,6 +1,7 @@
 #include "awlib_config/config.h"
 #include "awlib_input/input.h"
 #include "awlib_log/log.h"
+#include "awlib_str/str.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
