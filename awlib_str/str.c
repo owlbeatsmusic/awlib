@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 int awlib_str_compare_at_index(char *content, int index, char* compare) {
@@ -11,7 +12,11 @@ int awlib_str_compare_at_index(char *content, int index, char* compare) {
 // FROM OLib (java)
 
 void awlib_str_del_first_chars(char *str, int length) {
-
+	if (length == 0) return;
+	for (int i = 0; i < sizeof(str)-length; i++) {
+		str[i] = str[i+length];
+		str[strlen(str)-i] = '\0';
+	}
 	return;
 }
 

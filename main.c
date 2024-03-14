@@ -13,21 +13,25 @@ int my_keyboard_function(int key_code) {
 
 int main() {
 
+	char string[] = "abcde123";
+	awlib_str_del_first_chars(string, 2);
+	printf("\"%s\"\n", string);
+
 	//awlib_config_create("config.ini");
 	//awlib_config_add_string("config.ini", "test_key_1", "värde1");
 
 
 
-	awlib_log_create("log.txt");
+	//awlib_log_create("log.txt");
 	// awlib_log_print_f("log.txt", "HALLÅ, detta är viktigt", __FILE__);
 
-	awlib_log_print_t("log.txt", "blablabla");
+	//awlib_log_print_t("log.txt", "blablabla");
 
-	awlib_log_print_int("log.txt", 67);
+	//awlib_log_print_int("log.txt", 67);
 
-	awlib_log_print_string("log.txt", " och ");
+	//awlib_log_print_string("log.txt", " och ");
 
-	awlib_log_print_float("log.txt", 52.2456, 0);
+	//awlib_log_print_float("log.txt", 52.2456, 0);
 
 	//char dest_buf[100];
 	//awlib_config_get_string("config.ini", "test_key_1", dest_buf, 100);
