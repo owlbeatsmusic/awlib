@@ -4,6 +4,7 @@
 #include "awlib_str/str.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdarg.h>
 #include <stdio.h>
 
 int my_keyboard_function(int key_code) {
@@ -13,34 +14,28 @@ int my_keyboard_function(int key_code) {
 
 int main() {
 
-	char string[] = "abcde123";
-	awlib_str_del_first_chars(string, 2);
-	printf("\"%s\"\n", string);
+	/* log example */
+	awlib_log_create("log.txt");
+	awlib_log("log.txt", "abc=%d\n", 123);
+	awlib_log_t("log.txt", "abc=%d\n", 321);
+	awlib_log_t("log.txt", "abc=%d\n", 324529459);
 
-	//awlib_config_create("config.ini");
-	//awlib_config_add_string("config.ini", "test_key_1", "värde1");
+	/**/
 
+	/* config example
 
+	awlib_config_create("config.ini");
+	awlib_config_add_string("config.ini", "test_key_1", "värde1");
 
-	//awlib_log_create("log.txt");
-	// awlib_log_print_f("log.txt", "HALLÅ, detta är viktigt", __FILE__);
-
-	//awlib_log_print_t("log.txt", "blablabla");
-
-	//awlib_log_print_int("log.txt", 67);
-
-	//awlib_log_print_string("log.txt", " och ");
-
-	//awlib_log_print_float("log.txt", 52.2456, 0);
-
-	//char dest_buf[100];
-	//awlib_config_get_string("config.ini", "test_key_1", dest_buf, 100);
+	char dest_buf[100];
+	awlib_config_get_string("config.ini", "test_key_1", dest_buf, 100);
 	
-	//printf("dest_buf=%s\n", dest_buf);
+	printf("dest_buf=%s\n", dest_buf);
 	
-	//awlib_config_set_string("config.ini", "test_key_1", "byte1");
+	awlib_config_set_string("config.ini", "test_key_1", "byte1");
 
-	//printf("dest_buf=%s\n", dest_buf);
+	printf("dest_buf=%s\n", dest_buf);
+	*/
 
 	/* input example
 
