@@ -17,38 +17,24 @@ How to use:
    awlib_log_create("log_example.txt");
    ```
 2. Then to log to the file, depending on which information you want included use:
- - **Time & Date**
-   ```c
-   awlib_log_print_t("log_example.txt", "message");
-   ```
-   this will output to the *./log_example.txt*:
-   ```
-   [2024-02-09 12:00:37]: message
-   ```
-   <br/>
- - **File**
-   ```c
-   awlib_log_print_f("log_example.txt", "message");
-   ```
-   this will output to the *./log_example.txt*:
-   ```
-   [main.c]: message 
-   ```
-   <br/>
- - **Time, Date & File**
-   to be added...
+ - **clean**
+    ```c
+    awlib_log("log_example.txt", "message=%d\n", 31415);
+    ```
+    output:
+    ```c
+    message=31415
+    ```
+    </br>
+ - **timestamp**
+    ```c
+    awlib_log_t("log_example.txt", "message=%d\n", 92653);
+    ```
+    will output:
+    ```c
+    message=92653
+    ```
 <br/>
-
-These will not add a line break so to append strings and numbers to the log message use:
-   ```c
-   awlib_log_print_string("log_example.txt", "message");
-   ```
-   ```c
-   awlib_log_print_int("log_example.txt", 123);
-   ```
-   ```c
-   awlib_log_print_float("log_example.txt", 3.14, 2); // 2 is the ammount of decimals
-   ```
 
 <br/><br/>
 ## Input Library
