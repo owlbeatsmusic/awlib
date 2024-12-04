@@ -32,7 +32,7 @@ How to use:
     ```
     will output:
     ```c
-    message=92653
+    [2024-12-04 21:24:44]: message=92653
     ```
 <br/>
 
